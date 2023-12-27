@@ -1,0 +1,942 @@
+Process rank: -1, device: cuda, n_gpu: 1, distributed training: False, 16-bits training: False
+Training/evaluation parameters Namespace(adam_epsilon=1e-08, adv_epsilon=1.0, adv_name='word_embeddings', backbone='bert_estor-raw-add_crf', cache_dir='', config_name='', crf_learning_rate=0.001, data_dir='/mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/', device=device(type='cuda'), do_adv=False, do_eval=False, do_lower_case=True, do_predict=False, do_train=True, enumerate_mode='attention', eval_all_checkpoints=False, eval_max_seq_length=512, evaluate_during_training=False, fp16=False, fp16_opt_level='O1', freeze_backbone_epoch=15, gradient_accumulation_steps=1, id2label={0: 'X', 1: 'B-HC', 2: 'B-HP', 3: 'I-HC', 4: 'I-HP', 5: 'O', 6: 'L-HC', 7: 'L-HP', 8: 'U-HC', 9: 'U-HP', 10: '[START]', 11: '[END]'}, id2tag={0: 'product', 1: 'brand'}, if_add_a_self_attention=True, if_merge_by_add=True, label2id={'X': 0, 'B-HC': 1, 'B-HP': 2, 'I-HC': 3, 'I-HP': 4, 'O': 5, 'L-HC': 6, 'L-HP': 7, 'U-HC': 8, 'U-HP': 9, '[START]': 10, '[END]': 11}, learning_rate=3e-05, local_rank=-1, logging_steps=-1, loss_type='ce', markup='bios', max_grad_norm=1.0, max_steps=-1, model_name_or_path='/mnt/storage/wubinghong.wbh/deepl/torch_ner_new/prev_trained_model/bert-base-chinese', n_gpu=1, no_cuda=False, num_train_epochs=30.0, output_dir='/mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf', overwrite_cache=False, overwrite_output_dir=True, per_gpu_eval_batch_size=36, per_gpu_train_batch_size=36, pos_learning_rate=5e-05, predict_checkpoints=0, save_steps=-1, seed=42, tag2id={'product': 0, 'brand': 1}, tagging_rate=1.0, task_name='ecommerce', tokenizer_name='', train_max_seq_length=128, warmup_proportion=0.1, weight_decay=0.01)
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-train_bert-base-chinese_128_ecommerce
+***** Running training *****
+  Num examples = 3988
+  Num Epochs = 30
+  Instantaneous batch size per GPU = 36
+  Total train batch size (w. parallel, distributed & accumulation) = 36
+  Gradient Accumulation steps = 1
+  Total optimization steps = 3330
+Backbone bert_estor-raw-add_crf param is freeze
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-dev_bert-base-chinese_512_ecommerce
+***** Running evaluation on dev dataset  *****
+  Num examples = 499
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.6692 - recall: 0.4979 - f1: 0.5710 - loss: 11.7627 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.6730 - recall: 0.5832 - f1: 0.6249 
+******* HP results ********
+ acc: 0.4444 - recall: 0.0357 - f1: 0.0661 
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-test_bert-base-chinese_512_ecommerce
+***** Running evaluation on test dataset  *****
+  Num examples = 497
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7333 - recall: 0.5183 - f1: 0.6074 - loss: 11.7997 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.7341 - recall: 0.6078 - f1: 0.6650 
+******* HP results ********
+ acc: 0.6667 - recall: 0.0336 - f1: 0.0640 
+Saving model checkpoint to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-111
+Saving optimizer and scheduler states to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-111
+
+
+Backbone bert_estor-raw-add_crf param is freeze
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-dev_bert-base-chinese_512_ecommerce
+***** Running evaluation on dev dataset  *****
+  Num examples = 499
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.6562 - recall: 0.7010 - f1: 0.6779 - loss: 10.2593 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.6821 - recall: 0.7529 - f1: 0.7157 
+******* HP results ********
+ acc: 0.4796 - recall: 0.4196 - f1: 0.4476 
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-test_bert-base-chinese_512_ecommerce
+***** Running evaluation on test dataset  *****
+  Num examples = 497
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7119 - recall: 0.7147 - f1: 0.7133 - loss: 9.9137 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.7358 - recall: 0.7643 - f1: 0.7498 
+******* HP results ********
+ acc: 0.5464 - recall: 0.4454 - f1: 0.4907 
+Saving model checkpoint to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-222
+Saving optimizer and scheduler states to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-222
+
+
+Backbone bert_estor-raw-add_crf param is freeze
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-dev_bert-base-chinese_512_ecommerce
+***** Running evaluation on dev dataset  *****
+  Num examples = 499
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.6654 - recall: 0.7274 - f1: 0.6950 - loss: 9.5730 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.6903 - recall: 0.7710 - f1: 0.7284 
+******* HP results ********
+ acc: 0.5093 - recall: 0.4911 - f1: 0.5000 
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-test_bert-base-chinese_512_ecommerce
+***** Running evaluation on test dataset  *****
+  Num examples = 497
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7224 - recall: 0.7461 - f1: 0.7341 - loss: 9.1529 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.7496 - recall: 0.7845 - f1: 0.7667 
+******* HP results ********
+ acc: 0.5614 - recall: 0.5378 - f1: 0.5494 
+Saving model checkpoint to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-333
+Saving optimizer and scheduler states to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-333
+
+
+Backbone bert_estor-raw-add_crf param is freeze
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-dev_bert-base-chinese_512_ecommerce
+***** Running evaluation on dev dataset  *****
+  Num examples = 499
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.6903 - recall: 0.7316 - f1: 0.7103 - loss: 8.3326 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.7331 - recall: 0.7694 - f1: 0.7508 
+******* HP results ********
+ acc: 0.4720 - recall: 0.5268 - f1: 0.4979 
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-test_bert-base-chinese_512_ecommerce
+***** Running evaluation on test dataset  *****
+  Num examples = 497
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7571 - recall: 0.7631 - f1: 0.7601 - loss: 7.9767 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.7966 - recall: 0.7953 - f1: 0.7960 
+******* HP results ********
+ acc: 0.5556 - recall: 0.5882 - f1: 0.5714 
+Saving model checkpoint to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-444
+Saving optimizer and scheduler states to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-444
+
+
+Backbone bert_estor-raw-add_crf param is freeze
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-dev_bert-base-chinese_512_ecommerce
+***** Running evaluation on dev dataset  *****
+  Num examples = 499
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.6569 - recall: 0.7775 - f1: 0.7121 - loss: 8.2158 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.6775 - recall: 0.8237 - f1: 0.7435 
+******* HP results ********
+ acc: 0.5221 - recall: 0.5268 - f1: 0.5244 
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-test_bert-base-chinese_512_ecommerce
+***** Running evaluation on test dataset  *****
+  Num examples = 497
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7277 - recall: 0.8010 - f1: 0.7626 - loss: 7.7554 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.7528 - recall: 0.8403 - f1: 0.7941 
+******* HP results ********
+ acc: 0.5785 - recall: 0.5882 - f1: 0.5833 
+Saving model checkpoint to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-555
+Saving optimizer and scheduler states to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-555
+
+
+Backbone bert_estor-raw-add_crf param is freeze
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-dev_bert-base-chinese_512_ecommerce
+***** Running evaluation on dev dataset  *****
+  Num examples = 499
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.6832 - recall: 0.8039 - f1: 0.7387 - loss: 7.5179 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.7100 - recall: 0.8270 - f1: 0.7641 
+******* HP results ********
+ acc: 0.5468 - recall: 0.6786 - f1: 0.6056 
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-test_bert-base-chinese_512_ecommerce
+***** Running evaluation on test dataset  *****
+  Num examples = 497
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7402 - recall: 0.8168 - f1: 0.7766 - loss: 7.1409 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.7713 - recall: 0.8419 - f1: 0.8050 
+******* HP results ********
+ acc: 0.5827 - recall: 0.6807 - f1: 0.6279 
+Saving model checkpoint to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-666
+Saving optimizer and scheduler states to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-666
+
+
+Backbone bert_estor-raw-add_crf param is freeze
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-dev_bert-base-chinese_512_ecommerce
+***** Running evaluation on dev dataset  *****
+  Num examples = 499
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7260 - recall: 0.7663 - f1: 0.7456 - loss: 6.4826 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.7519 - recall: 0.7990 - f1: 0.7748 
+******* HP results ********
+ acc: 0.5789 - recall: 0.5893 - f1: 0.5841 
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-test_bert-base-chinese_512_ecommerce
+***** Running evaluation on test dataset  *****
+  Num examples = 497
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7924 - recall: 0.7945 - f1: 0.7935 - loss: 6.2366 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.8186 - recall: 0.8186 - f1: 0.8186 
+******* HP results ********
+ acc: 0.6529 - recall: 0.6639 - f1: 0.6583 
+Saving model checkpoint to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-777
+Saving optimizer and scheduler states to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-777
+
+
+Backbone bert_estor-raw-add_crf param is freeze
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-dev_bert-base-chinese_512_ecommerce
+***** Running evaluation on dev dataset  *****
+  Num examples = 499
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.6908 - recall: 0.8081 - f1: 0.7449 - loss: 7.0225 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.7258 - recall: 0.8287 - f1: 0.7738 
+******* HP results ********
+ acc: 0.5270 - recall: 0.6964 - f1: 0.6000 
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-test_bert-base-chinese_512_ecommerce
+***** Running evaluation on test dataset  *****
+  Num examples = 497
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7530 - recall: 0.8220 - f1: 0.7860 - loss: 6.5566 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.7887 - recall: 0.8450 - f1: 0.8159 
+******* HP results ********
+ acc: 0.5804 - recall: 0.6975 - f1: 0.6336 
+Saving model checkpoint to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-888
+Saving optimizer and scheduler states to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-888
+
+
+Backbone bert_estor-raw-add_crf param is freeze
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-dev_bert-base-chinese_512_ecommerce
+***** Running evaluation on dev dataset  *****
+  Num examples = 499
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7013 - recall: 0.8067 - f1: 0.7503 - loss: 6.5106 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.7237 - recall: 0.8287 - f1: 0.7727 
+******* HP results ********
+ acc: 0.5833 - recall: 0.6875 - f1: 0.6311 
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-test_bert-base-chinese_512_ecommerce
+***** Running evaluation on test dataset  *****
+  Num examples = 497
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7524 - recall: 0.8272 - f1: 0.7880 - loss: 6.1906 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.7781 - recall: 0.8481 - f1: 0.8116 
+******* HP results ********
+ acc: 0.6204 - recall: 0.7143 - f1: 0.6641 
+Saving model checkpoint to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-999
+Saving optimizer and scheduler states to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-999
+
+
+Backbone bert_estor-raw-add_crf param is freeze
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-dev_bert-base-chinese_512_ecommerce
+***** Running evaluation on dev dataset  *****
+  Num examples = 499
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7075 - recall: 0.8108 - f1: 0.7557 - loss: 5.9616 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.7379 - recall: 0.8303 - f1: 0.7814 
+******* HP results ********
+ acc: 0.5603 - recall: 0.7054 - f1: 0.6245 
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-test_bert-base-chinese_512_ecommerce
+***** Running evaluation on test dataset  *****
+  Num examples = 497
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7696 - recall: 0.8220 - f1: 0.7949 - loss: 5.7120 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.8056 - recall: 0.8419 - f1: 0.8234 
+******* HP results ********
+ acc: 0.5986 - recall: 0.7143 - f1: 0.6513 
+Saving model checkpoint to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-1110
+Saving optimizer and scheduler states to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-1110
+
+
+Backbone bert_estor-raw-add_crf param is freeze
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-dev_bert-base-chinese_512_ecommerce
+***** Running evaluation on dev dataset  *****
+  Num examples = 499
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7159 - recall: 0.8164 - f1: 0.7628 - loss: 5.6949 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.7482 - recall: 0.8369 - f1: 0.7900 
+******* HP results ********
+ acc: 0.5603 - recall: 0.7054 - f1: 0.6245 
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-test_bert-base-chinese_512_ecommerce
+***** Running evaluation on test dataset  *****
+  Num examples = 497
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7638 - recall: 0.8338 - f1: 0.7972 - loss: 5.4093 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.8006 - recall: 0.8527 - f1: 0.8258 
+******* HP results ********
+ acc: 0.5918 - recall: 0.7311 - f1: 0.6541 
+Saving model checkpoint to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-1221
+Saving optimizer and scheduler states to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-1221
+
+
+Backbone bert_estor-raw-add_crf param is freeze
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-dev_bert-base-chinese_512_ecommerce
+***** Running evaluation on dev dataset  *****
+  Num examples = 499
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7401 - recall: 0.8081 - f1: 0.7726 - loss: 5.3815 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.7750 - recall: 0.8287 - f1: 0.8010 
+******* HP results ********
+ acc: 0.5735 - recall: 0.6964 - f1: 0.6290 
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-test_bert-base-chinese_512_ecommerce
+***** Running evaluation on test dataset  *****
+  Num examples = 497
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7757 - recall: 0.8285 - f1: 0.8013 - loss: 5.1398 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.8146 - recall: 0.8450 - f1: 0.8295 
+******* HP results ********
+ acc: 0.5986 - recall: 0.7395 - f1: 0.6617 
+Saving model checkpoint to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-1332
+Saving optimizer and scheduler states to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-1332
+
+
+Backbone bert_estor-raw-add_crf param is freeze
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-dev_bert-base-chinese_512_ecommerce
+***** Running evaluation on dev dataset  *****
+  Num examples = 499
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7245 - recall: 0.8192 - f1: 0.7689 - loss: 5.3736 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.7636 - recall: 0.8353 - f1: 0.7978 
+******* HP results ********
+ acc: 0.5503 - recall: 0.7321 - f1: 0.6284 
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-test_bert-base-chinese_512_ecommerce
+***** Running evaluation on test dataset  *****
+  Num examples = 497
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7699 - recall: 0.8364 - f1: 0.8018 - loss: 5.0939 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.8124 - recall: 0.8527 - f1: 0.8321 
+******* HP results ********
+ acc: 0.5817 - recall: 0.7479 - f1: 0.6544 
+Saving model checkpoint to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-1443
+Saving optimizer and scheduler states to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-1443
+
+
+Backbone bert_estor-raw-add_crf param is freeze
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-dev_bert-base-chinese_512_ecommerce
+***** Running evaluation on dev dataset  *****
+  Num examples = 499
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7392 - recall: 0.8122 - f1: 0.7740 - loss: 5.1598 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.7727 - recall: 0.8287 - f1: 0.7997 
+******* HP results ********
+ acc: 0.5827 - recall: 0.7232 - f1: 0.6454 
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-test_bert-base-chinese_512_ecommerce
+***** Running evaluation on test dataset  *****
+  Num examples = 497
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7842 - recall: 0.8325 - f1: 0.8076 - loss: 4.9351 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.8174 - recall: 0.8465 - f1: 0.8317 
+******* HP results ********
+ acc: 0.6294 - recall: 0.7563 - f1: 0.6870 
+Saving model checkpoint to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-1554
+Saving optimizer and scheduler states to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-1554
+
+
+Backbone bert_estor-raw-add_crf param is freeze
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-dev_bert-base-chinese_512_ecommerce
+***** Running evaluation on dev dataset  *****
+  Num examples = 499
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.6901 - recall: 0.8331 - f1: 0.7549 - loss: 5.2966 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.7135 - recall: 0.8534 - f1: 0.7772 
+******* HP results ********
+ acc: 0.5704 - recall: 0.7232 - f1: 0.6378 
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-test_bert-base-chinese_512_ecommerce
+***** Running evaluation on test dataset  *****
+  Num examples = 497
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7358 - recall: 0.8495 - f1: 0.7886 - loss: 5.1256 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.7650 - recall: 0.8682 - f1: 0.8134 
+******* HP results ********
+ acc: 0.5933 - recall: 0.7479 - f1: 0.6617 
+Saving model checkpoint to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-1665
+Saving optimizer and scheduler states to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-1665
+
+
+Backbone bert_estor-raw-add_crf param is not freeze
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-dev_bert-base-chinese_512_ecommerce
+***** Running evaluation on dev dataset  *****
+  Num examples = 499
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7569 - recall: 0.8401 - f1: 0.7963 - loss: 4.7121 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.7877 - recall: 0.8616 - f1: 0.8230 
+******* HP results ********
+ acc: 0.6045 - recall: 0.7232 - f1: 0.6585 
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-test_bert-base-chinese_512_ecommerce
+***** Running evaluation on test dataset  *****
+  Num examples = 497
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7922 - recall: 0.8534 - f1: 0.8217 - loss: 4.6523 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.8279 - recall: 0.8729 - f1: 0.8498 
+******* HP results ********
+ acc: 0.6224 - recall: 0.7479 - f1: 0.6794 
+Saving model checkpoint to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-1776
+Saving optimizer and scheduler states to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-1776
+
+
+Backbone bert_estor-raw-add_crf param is not freeze
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-dev_bert-base-chinese_512_ecommerce
+***** Running evaluation on dev dataset  *****
+  Num examples = 499
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.8063 - recall: 0.8164 - f1: 0.8113 - loss: 4.0453 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.8203 - recall: 0.8501 - f1: 0.8350 
+******* HP results ********
+ acc: 0.7172 - recall: 0.6339 - f1: 0.6730 
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-test_bert-base-chinese_512_ecommerce
+***** Running evaluation on test dataset  *****
+  Num examples = 497
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.8169 - recall: 0.8351 - f1: 0.8259 - loss: 4.0170 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.8412 - recall: 0.8543 - f1: 0.8477 
+******* HP results ********
+ acc: 0.6905 - recall: 0.7311 - f1: 0.7102 
+Saving model checkpoint to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-1887
+Saving optimizer and scheduler states to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-1887
+
+
+Backbone bert_estor-raw-add_crf param is not freeze
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-dev_bert-base-chinese_512_ecommerce
+***** Running evaluation on dev dataset  *****
+  Num examples = 499
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7375 - recall: 0.8637 - f1: 0.7956 - loss: 4.5641 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.7807 - recall: 0.8797 - f1: 0.8273 
+******* HP results ********
+ acc: 0.5506 - recall: 0.7768 - f1: 0.6444 
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-test_bert-base-chinese_512_ecommerce
+***** Running evaluation on test dataset  *****
+  Num examples = 497
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7683 - recall: 0.8770 - f1: 0.8191 - loss: 4.4551 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.8096 - recall: 0.8899 - f1: 0.8479 
+******* HP results ********
+ acc: 0.5890 - recall: 0.8067 - f1: 0.6809 
+Saving model checkpoint to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-1998
+Saving optimizer and scheduler states to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-1998
+
+
+Backbone bert_estor-raw-add_crf param is not freeze
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-dev_bert-base-chinese_512_ecommerce
+***** Running evaluation on dev dataset  *****
+  Num examples = 499
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.8166 - recall: 0.8234 - f1: 0.8199 - loss: 4.1276 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.8285 - recall: 0.8435 - f1: 0.8359 
+******* HP results ********
+ acc: 0.7477 - recall: 0.7143 - f1: 0.7306 
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-test_bert-base-chinese_512_ecommerce
+***** Running evaluation on test dataset  *****
+  Num examples = 497
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.8316 - recall: 0.8338 - f1: 0.8327 - loss: 4.2376 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.8485 - recall: 0.8512 - f1: 0.8498 
+******* HP results ********
+ acc: 0.7395 - recall: 0.7395 - f1: 0.7395 
+Saving model checkpoint to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-2109
+Saving optimizer and scheduler states to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-2109
+
+
+Backbone bert_estor-raw-add_crf param is not freeze
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-dev_bert-base-chinese_512_ecommerce
+***** Running evaluation on dev dataset  *****
+  Num examples = 499
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.8013 - recall: 0.8526 - f1: 0.8261 - loss: 4.7003 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.8232 - recall: 0.8666 - f1: 0.8443 
+******* HP results ********
+ acc: 0.6905 - recall: 0.7768 - f1: 0.7311 
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-test_bert-base-chinese_512_ecommerce
+***** Running evaluation on test dataset  *****
+  Num examples = 497
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.8042 - recall: 0.8442 - f1: 0.8238 - loss: 4.7891 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.8229 - recall: 0.8574 - f1: 0.8398 
+******* HP results ********
+ acc: 0.7077 - recall: 0.7731 - f1: 0.7390 
+Saving model checkpoint to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-2220
+Saving optimizer and scheduler states to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-2220
+
+
+Backbone bert_estor-raw-add_crf param is not freeze
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-dev_bert-base-chinese_512_ecommerce
+***** Running evaluation on dev dataset  *****
+  Num examples = 499
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7957 - recall: 0.8289 - f1: 0.8120 - loss: 5.1216 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.8248 - recall: 0.8451 - f1: 0.8348 
+******* HP results ********
+ acc: 0.6535 - recall: 0.7411 - f1: 0.6946 
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-test_bert-base-chinese_512_ecommerce
+***** Running evaluation on test dataset  *****
+  Num examples = 497
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.8128 - recall: 0.8469 - f1: 0.8295 - loss: 5.2479 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.8369 - recall: 0.8589 - f1: 0.8477 
+******* HP results ********
+ acc: 0.6940 - recall: 0.7815 - f1: 0.7352 
+Saving model checkpoint to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-2331
+Saving optimizer and scheduler states to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-2331
+
+
+Backbone bert_estor-raw-add_crf param is not freeze
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-dev_bert-base-chinese_512_ecommerce
+***** Running evaluation on dev dataset  *****
+  Num examples = 499
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7737 - recall: 0.8512 - f1: 0.8106 - loss: 5.8494 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.7907 - recall: 0.8715 - f1: 0.8292 
+******* HP results ********
+ acc: 0.6803 - recall: 0.7411 - f1: 0.7094 
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-test_bert-base-chinese_512_ecommerce
+***** Running evaluation on test dataset  *****
+  Num examples = 497
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7943 - recall: 0.8442 - f1: 0.8185 - loss: 5.9173 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.8102 - recall: 0.8605 - f1: 0.8346 
+******* HP results ********
+ acc: 0.7087 - recall: 0.7563 - f1: 0.7317 
+Saving model checkpoint to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-2442
+Saving optimizer and scheduler states to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-2442
+
+
+Backbone bert_estor-raw-add_crf param is not freeze
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-dev_bert-base-chinese_512_ecommerce
+***** Running evaluation on dev dataset  *****
+  Num examples = 499
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7856 - recall: 0.8359 - f1: 0.8100 - loss: 6.0183 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.7927 - recall: 0.8567 - f1: 0.8234 
+******* HP results ********
+ acc: 0.7431 - recall: 0.7232 - f1: 0.7330 
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-test_bert-base-chinese_512_ecommerce
+***** Running evaluation on test dataset  *****
+  Num examples = 497
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.8050 - recall: 0.8482 - f1: 0.8260 - loss: 6.0784 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.8173 - recall: 0.8667 - f1: 0.8412 
+******* HP results ********
+ acc: 0.7355 - recall: 0.7479 - f1: 0.7417 
+Saving model checkpoint to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-2553
+Saving optimizer and scheduler states to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-2553
+
+
+Backbone bert_estor-raw-add_crf param is not freeze
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-dev_bert-base-chinese_512_ecommerce
+***** Running evaluation on dev dataset  *****
+  Num examples = 499
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7880 - recall: 0.8373 - f1: 0.8119 - loss: 6.6061 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.8059 - recall: 0.8550 - f1: 0.8297 
+******* HP results ********
+ acc: 0.6917 - recall: 0.7411 - f1: 0.7155 
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-test_bert-base-chinese_512_ecommerce
+***** Running evaluation on test dataset  *****
+  Num examples = 497
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.8030 - recall: 0.8482 - f1: 0.8250 - loss: 6.4269 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.8213 - recall: 0.8620 - f1: 0.8411 
+******* HP results ********
+ acc: 0.7077 - recall: 0.7731 - f1: 0.7390 
+Saving model checkpoint to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-2664
+Saving optimizer and scheduler states to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-2664
+
+
+Backbone bert_estor-raw-add_crf param is not freeze
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-dev_bert-base-chinese_512_ecommerce
+***** Running evaluation on dev dataset  *****
+  Num examples = 499
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7830 - recall: 0.8331 - f1: 0.8073 - loss: 7.3536 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.8025 - recall: 0.8501 - f1: 0.8256 
+******* HP results ********
+ acc: 0.6803 - recall: 0.7411 - f1: 0.7094 
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-test_bert-base-chinese_512_ecommerce
+***** Running evaluation on test dataset  *****
+  Num examples = 497
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.8082 - recall: 0.8495 - f1: 0.8283 - loss: 7.1807 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.8286 - recall: 0.8620 - f1: 0.8450 
+******* HP results ********
+ acc: 0.7045 - recall: 0.7815 - f1: 0.7410 
+Saving model checkpoint to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-2775
+Saving optimizer and scheduler states to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-2775
+
+
+Backbone bert_estor-raw-add_crf param is not freeze
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-dev_bert-base-chinese_512_ecommerce
+***** Running evaluation on dev dataset  *****
+  Num examples = 499
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7893 - recall: 0.8387 - f1: 0.8132 - loss: 7.5128 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.8069 - recall: 0.8534 - f1: 0.8295 
+******* HP results ********
+ acc: 0.6967 - recall: 0.7589 - f1: 0.7265 
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-test_bert-base-chinese_512_ecommerce
+***** Running evaluation on test dataset  *****
+  Num examples = 497
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.8017 - recall: 0.8416 - f1: 0.8212 - loss: 7.6284 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.8229 - recall: 0.8574 - f1: 0.8398 
+******* HP results ********
+ acc: 0.6923 - recall: 0.7563 - f1: 0.7229 
+Saving model checkpoint to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-2886
+Saving optimizer and scheduler states to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-2886
+
+
+Backbone bert_estor-raw-add_crf param is not freeze
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-dev_bert-base-chinese_512_ecommerce
+***** Running evaluation on dev dataset  *****
+  Num examples = 499
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7865 - recall: 0.8401 - f1: 0.8124 - loss: 7.8556 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.8115 - recall: 0.8583 - f1: 0.8343 
+******* HP results ********
+ acc: 0.6587 - recall: 0.7411 - f1: 0.6975 
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-test_bert-base-chinese_512_ecommerce
+***** Running evaluation on test dataset  *****
+  Num examples = 497
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.8086 - recall: 0.8403 - f1: 0.8241 - loss: 7.9246 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.8351 - recall: 0.8558 - f1: 0.8453 
+******* HP results ********
+ acc: 0.6767 - recall: 0.7563 - f1: 0.7143 
+Saving model checkpoint to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-2997
+Saving optimizer and scheduler states to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-2997
+
+
+Backbone bert_estor-raw-add_crf param is not freeze
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-dev_bert-base-chinese_512_ecommerce
+***** Running evaluation on dev dataset  *****
+  Num examples = 499
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.8059 - recall: 0.8373 - f1: 0.8213 - loss: 8.3558 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.8112 - recall: 0.8567 - f1: 0.8333 
+******* HP results ********
+ acc: 0.7736 - recall: 0.7321 - f1: 0.7523 
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-test_bert-base-chinese_512_ecommerce
+***** Running evaluation on test dataset  *****
+  Num examples = 497
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.8159 - recall: 0.8351 - f1: 0.8254 - loss: 8.3979 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.8341 - recall: 0.8574 - f1: 0.8456 
+******* HP results ********
+ acc: 0.7143 - recall: 0.7143 - f1: 0.7143 
+Saving model checkpoint to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-3108
+Saving optimizer and scheduler states to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-3108
+
+
+Backbone bert_estor-raw-add_crf param is not freeze
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-dev_bert-base-chinese_512_ecommerce
+***** Running evaluation on dev dataset  *****
+  Num examples = 499
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7984 - recall: 0.8373 - f1: 0.8174 - loss: 8.6169 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.8084 - recall: 0.8550 - f1: 0.8311 
+******* HP results ********
+ acc: 0.7411 - recall: 0.7411 - f1: 0.7411 
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-test_bert-base-chinese_512_ecommerce
+***** Running evaluation on test dataset  *****
+  Num examples = 497
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.8137 - recall: 0.8403 - f1: 0.8268 - loss: 8.5548 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.8343 - recall: 0.8589 - f1: 0.8464 
+******* HP results ********
+ acc: 0.7040 - recall: 0.7395 - f1: 0.7213 
+Saving model checkpoint to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-3219
+Saving optimizer and scheduler states to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-3219
+
+
+Backbone bert_estor-raw-add_crf param is not freeze
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-dev_bert-base-chinese_512_ecommerce
+***** Running evaluation on dev dataset  *****
+  Num examples = 499
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.7968 - recall: 0.8345 - f1: 0.8152 - loss: 8.7403 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.8129 - recall: 0.8517 - f1: 0.8319 
+******* HP results ********
+ acc: 0.7094 - recall: 0.7411 - f1: 0.7249 
+Loading features from cached file /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/datasets/ecommerce/cached_crf-test_bert-base-chinese_512_ecommerce
+***** Running evaluation on test dataset  *****
+  Num examples = 497
+  Batch size = 36
+
+
+***** Eval results  *****
+ acc: 0.8098 - recall: 0.8416 - f1: 0.8254 - loss: 8.7377 
+***** Entity results  *****
+******* HC results ********
+ acc: 0.8328 - recall: 0.8574 - f1: 0.8449 
+******* HP results ********
+ acc: 0.6923 - recall: 0.7563 - f1: 0.7229 
+Saving model checkpoint to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-3330
+Saving optimizer and scheduler states to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf/checkpoint-3330
+
+
+ global_step = 3330, average loss = 4.6561015390519715
+Saving model checkpoint to /mnt/storage/wubinghong.wbh/deepl/torch_ner_new/outputs/ecommerce_output/bert_estor-raw-add_crf
