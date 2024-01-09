@@ -1,0 +1,27 @@
+nohup: ignoring input
+Traceback (most recent call last):
+  File "main.py", line 7, in <module>
+    import torch
+  File "/mnt/storage/wubinghong.wbh/project/pytorch-3.8/lib/python3.8/site-packages/torch/__init__.py", line 1465, in <module>
+    from . import _meta_registrations
+  File "/mnt/storage/wubinghong.wbh/project/pytorch-3.8/lib/python3.8/site-packages/torch/_meta_registrations.py", line 7, in <module>
+    from torch._decomp import _add_op_to_registry, global_decomposition_table, meta_table
+  File "/mnt/storage/wubinghong.wbh/project/pytorch-3.8/lib/python3.8/site-packages/torch/_decomp/__init__.py", line 169, in <module>
+    import torch._decomp.decompositions
+  File "/mnt/storage/wubinghong.wbh/project/pytorch-3.8/lib/python3.8/site-packages/torch/_decomp/decompositions.py", line 3302, in <module>
+    register_inplace(aten.fill_, aten.fill)
+  File "/mnt/storage/wubinghong.wbh/project/pytorch-3.8/lib/python3.8/site-packages/torch/_decomp/decompositions.py", line 3290, in register_inplace
+    def inplace_op(*args, **kwargs):
+  File "/mnt/storage/wubinghong.wbh/project/pytorch-3.8/lib/python3.8/site-packages/torch/_decomp/__init__.py", line 131, in decomposition_decorator
+    tree_map(register, aten_op)
+  File "/mnt/storage/wubinghong.wbh/project/pytorch-3.8/lib/python3.8/site-packages/torch/utils/_pytree.py", line 196, in tree_map
+    return tree_unflatten([fn(i) for i in flat_args], spec)
+  File "/mnt/storage/wubinghong.wbh/project/pytorch-3.8/lib/python3.8/site-packages/torch/utils/_pytree.py", line 196, in <listcomp>
+    return tree_unflatten([fn(i) for i in flat_args], spec)
+  File "/mnt/storage/wubinghong.wbh/project/pytorch-3.8/lib/python3.8/site-packages/torch/_decomp/__init__.py", line 128, in register
+    _add_op_to_registry(registry, op, fn)
+  File "/mnt/storage/wubinghong.wbh/project/pytorch-3.8/lib/python3.8/site-packages/torch/_decomp/__init__.py", line 44, in _add_op_to_registry
+    overloads.append(getattr(op, ol))
+  File "/mnt/storage/wubinghong.wbh/project/pytorch-3.8/lib/python3.8/site-packages/torch/_ops.py", line 478, in __getattr__
+    op_, op_dk_, tags = torch._C._get_operation_overload(
+KeyboardInterrupt
